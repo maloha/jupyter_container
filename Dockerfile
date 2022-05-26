@@ -1,5 +1,4 @@
 FROM ubuntu:20.04
-#MAINTAINER "Andrei Maksimov"
 MAINTAINER "Loïc Mahé"
 
 ENV DEBIAN_FRONTEND noninteractive
