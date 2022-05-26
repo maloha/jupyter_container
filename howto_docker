@@ -1,0 +1,50 @@
+
+docker build -f Dockerfile -t python_data_science_container .
+docker build -f Dockerfile -t python_container3 .
+
+
+
+#docker run -it -p 8888:8888  -p 6006:6006 -d -v $(pwd)/notebooks:/notebooks  python_container
+#docker run -it -p 8888:8888  -p 6006:6006 -d -v $(pwd)/notebooks:/notebooks  python_container
+#docker ps
+
+
+
+docker run -it -p 8888:8888  -p 6006:6006 -d -v D:\Users\Loic\Documents\dev\python_container\notebooks:/notebooks  python_container
+docker run -it -p 8888:8888  -p 6006:6006 -d -v D:\Users\Loic\Documents\dev\python_container\notebooks:/notebooks  python_container3
+docker ps
+
+## docker run -p 127.0.0.1:8080:8080 your_image_name
+docker run -it -p 127.0.0.1:8888:8888  -p 127.0.0.1:6006:6006 -d -v D:\Users\Loic\Documents\dev\python_container\notebooks:/notebooks  python_container3
+docker ps
+
+
+
+docker exec -it python_container bash
+
+docker run -it python_container /bin/bash
+
+docker ps
+docker cp jupyter_notebook_config.py 8b39afb46e43:/root/.
+
+
+
+
+...
+docker commit 6b53d03d311d python_container
+
+
+
+docker save -o <path for generated tar file> <image name>
+
+docker load -i <path to image tar file>
+
+
+
+
+docker run -it -p 8888:8888  -p 6006:6006 -d -v D:\Users\Loic\Documents\dev\python_container\notebooks:/notebooks  python_container
+docker run -it -p 127.0.0.1:8888:8888  -p 127.0.0.1:6006:6006 -d -v D:\Users\Loic\Documents\dev\python_container\notebooks:/notebooks  python_container3
+docker ps
+### docker exec -it f3862f00b6b4 /run_jupyter.sh
+
+www http://localhost:8888/tree
