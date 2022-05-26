@@ -25,7 +25,6 @@ RUN pip3 install tensorflow && \
 
 RUN ["mkdir", "notebooks"]
 
-#COPY conf/.jupyter /root/.jupyter
 RUN mkdir -p /root/.jupyter
 COPY jupyter_notebook_config.py /root/.jupyter
 
@@ -36,8 +35,5 @@ EXPOSE 8888 6006
 
 # Store notebooks in this mounted directory
 VOLUME /notebooks
-
-#CMD ["/run_jupyter.sh"]
-#RUN and ENTRYPOINT  RUN /bootstrap.sh
 
 ENTRYPOINT ["/run_jupyter.sh"]
